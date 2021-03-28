@@ -49,7 +49,6 @@ async function updateStation(req, res) {
         const station = req.body
         const savedStation = await stationService.update(station)
         res.send(savedStation)
-            // socketService.broadcast({type: 'user-updated', data: station, to:savedUser._id})
     } catch (err) {
         logger.error('Failed to update user', err)
         res.status(500).send({ err: 'Failed to update user' })
