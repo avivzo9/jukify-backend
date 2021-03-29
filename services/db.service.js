@@ -7,7 +7,7 @@ module.exports = {
 }
 
 // Database Name
-const dbName = 'station'
+const dbName = 'jukify'
 
 var dbConn = null
 
@@ -34,7 +34,3 @@ async function connect() {
         throw err
     }
 }
-
-
-
-
