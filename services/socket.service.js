@@ -14,10 +14,10 @@ function connectSockets(http, session) {
     }));
     gIo.on('connection', socket => {
         console.log('Someone connected')
-        // console.log('New socket - socket.handshake.sessionID', socket.handshake.sessionID)
+            // console.log('New socket - socket.handshake.sessionID', socket.handshake.sessionID)
         gSocketBySessionIdMap[socket.handshake.sessionID] = socket
-        // TODO: emitToUser feature - need to tested for CaJan21
-        // if (socket.handshake?.session?.user) socket.join(socket.handshake.session.user._id)
+            // TODO: emitToUser feature - need to tested for CaJan21
+            // if (socket.handshake?.session?.user) socket.join(socket.handshake.session.user._id)
         socket.on('disconnect', socket => {
             console.log('Someone disconnected')
             if (socket.handshake) {
@@ -30,7 +30,7 @@ function connectSockets(http, session) {
                 socket.leave(socket.myTopic)
             }
             socket.join(topic)
-            // logger.debug('Session ID is', socket.handshake.sessionID)
+                // logger.debug('Session ID is', socket.handshake.sessionID)
             socket.myTopic = topic
         })
         socket.on('chat newMsg', msg => {
@@ -46,10 +46,12 @@ function connectSockets(http, session) {
             gIo.in(socket.myTopic).emit('station change-song', songId)
         })
         socket.on('player to-toggle-play-song', () => {
-            socket.broadcast.emit('player toggle-play-song')
+            gIo.in(socket.myTopic).emit('player toggle-play-song')
+                // socket.broadcast.emit('player toggle-play-song')
         })
         socket.on('player to-next-previouse-song', (dif) => {
-            socket.broadcast.emit('player next-previouse-song', dif)
+            gIo.in(socket.myTopic).emit('player next-previouse-song', dif)
+                // socket.broadcast.emit('player next-previouse-song', dif)
         })
         socket.on('station to-change-song', (songRemove) => {
             gIo.in(socket.myTopic).emit('station remove-song', songRemove)
