@@ -25,6 +25,7 @@ function connectSockets(http, session) {
             }
         })
         socket.on('chat topic', topic => {
+            console.log('topic:', topic)
             if (socket.myTopic === topic) return;
             if (socket.myTopic) {
                 socket.leave(socket.myTopic)
