@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.910f387f51e9db0fadc3ea00b4a97967.js"
+  "/precache-manifest.01e735027ff7374a8ecb74ec887d561f.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "jukify"});
