@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c7bf42c22c150c0d213c",
-    "url": "/css/app.326cadc0.css"
+    "revision": "abb867f2fb491e04272f",
+    "url": "/css/app.dcd83061.css"
   },
   {
     "revision": "dde125478f3a493e5988",
@@ -32,16 +32,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/no-img-jukify.3bd5943e.jpg"
   },
   {
-    "revision": "e6b0cd73ef64340b2a1e0d56e64d4a00",
+    "revision": "ebf4fa6e3a971c9476f74b5e25a6864d",
     "url": "/index.html"
   },
   {
-    "revision": "c7bf42c22c150c0d213c",
-    "url": "/js/app.6b2f1658.js"
+    "revision": "abb867f2fb491e04272f",
+    "url": "/js/app.7a3680dd.js"
   },
   {
     "revision": "dde125478f3a493e5988",
     "url": "/js/chunk-vendors.25ca818e.js"
+  },
+  {
+    "revision": "4f619a03e1d72d2c98ba82fbf9c56122",
+    "url": "/jukify-icon.png"
   },
   {
     "revision": "ce06d44c5486617436c28682ba54b91a",
