@@ -39,6 +39,7 @@ function connectSockets(http, session) {
             gIo.in(socket.myTopic).emit('station change-song', songId)
         })
         socket.on('player to-toggle-play-song', () => {
+            // gIo.in(socket.myTopic).emit('player toggle-play-song')
             socket.broadcast.emit('player toggle-play-song')
         })
         socket.on('player to-next-previouse-song', (dif) => {
