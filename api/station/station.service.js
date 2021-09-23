@@ -1,6 +1,5 @@
 const dbService = require('../../services/db.service')
 const ObjectId = require('mongodb').ObjectId
-const asyncLocalStorage = require('../../services/als.service')
 
 module.exports = {
     query,
@@ -37,7 +36,7 @@ async function query(filterBy = {}) {
         }
         return stationsCopy
     } catch (err) {
-        logger.error('cannot find stations', err)
+        // logger.error('cannot find stations', err)
         throw err
     }
 }
@@ -48,7 +47,7 @@ async function remove(stationId) {
         const query = { _id: ObjectId(stationId) }
         await collection.deleteOne(query)
     } catch (err) {
-        logger.error(`cannot remove station ${stationId}`, err)
+        // logger.error(`cannot remove station ${stationId}`, err)
         throw err
     }
 }
@@ -69,7 +68,7 @@ async function add(station) {
         await collection.insertOne(stationToAdd)
         return stationToAdd;
     } catch (err) {
-        logger.error('cannot insert station', err)
+        // logger.error('cannot insert station', err)
         throw err
     }
 }
@@ -80,7 +79,7 @@ async function getById(stationId) {
         const station = await collection.findOne({ '_id': ObjectId(stationId) })
         return station
     } catch (err) {
-        logger.error(`while finding user ${stationId}`, err)
+        // logger.error(`while finding user ${stationId}`, err)
         throw err
     }
 }
@@ -103,12 +102,7 @@ async function update(station) {
         await collection.updateOne({ '_id': stationToSave._id }, { $set: stationToSave })
         return stationToSave;
     } catch (err) {
-        logger.error(`cannot update station ${station._id}`, err)
+        // logger.error(`cannot update station ${station._id}`, err)
         throw err
     }
-}
-
-function _buildCriteria(filterBy) {
-    const criteria = {}
-    return criteria
 }

@@ -17,7 +17,7 @@ async function getCollection(collectionName) {
         const collection = await db.collection(collectionName)
         return collection
     } catch (err) {
-        logger.error('Failed to get Mongo collection', err)
+        // logger.error('Failed to get Mongo collection', err)
         throw err
     }
 }
@@ -30,7 +30,7 @@ async function connect() {
         dbConn = db
         return db
     } catch (err) {
-        logger.error('Cannot Connect to DB', err)
+        // logger.error('Cannot Connect to DB', err)
         throw err
     }
 }
