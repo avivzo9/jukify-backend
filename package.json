@@ -5,6 +5,7 @@
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
+        "heroku": "git push heroku main",
         "server:dev": "set NODE_ENV=development && nodemon server.js",
         "server:prod": "node server.js"
     },
